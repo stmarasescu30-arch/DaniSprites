@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DaniSprites</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+    <img src="./logo-danisprites.png" alt="Logo DaniSprites">
+    <span>DaniSprites</span>
+</div>
+    <nav>
+
+    <a href="index.html">Inicio</a>
+    <a href="perfiles.html">Perfiles</a>
+    <a href="fondos.html">Fondos</a>
+    <a href="favoritos.html">Favoritos</a>
+    <a href="apoyar.html">Apoyar</a>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+    <h1>Las mejores fotos de perfil y fondos de pantalla</h1>
+
+    <p>Descarga imágenes de espíritus de forma rápida y gratuita.</p>
+
+    <div class="search-box">
+        <input type="text" placeholder="🔍 Buscar un espíritu...">
+    </div>
+
+    <div class="season-filters">
+    <button class="filter-btn active" data-season="todos">TODOS</button>
+    <button class="filter-btn" data-season="C7 T3">C7 T3</button>
+    <button class="filter-btn" data-season="C7 T4">C7 T4</button>
+</div>
+
+</section>
+
+<section class="gallery">
+
+    <div id="gallery" class="cards"></div>
+
+</section>
+
+
+<div id="preview" class="preview">
+
+    <div class="preview-content">
+
+        <span id="closePreview">&times;</span>
+
+        <img id="previewImage" src="" alt="Vista previa">
+
+    </div>
+
+</div>
+
+<script src="sprites.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

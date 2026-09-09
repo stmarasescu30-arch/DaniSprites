@@ -1,0 +1,497 @@
+/* ===========================
+   RESETEAR ESTILOS
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#111827;
+    color:white;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+header{
+    background:#1f2937;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 50px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:34px;
+    font-weight:bold;
+}
+
+.logo img{
+    width:55px;
+    height:55px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+nav{
+    display:flex;
+    gap:30px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#3b82f6;
+}
+
+/* ===========================
+   HERO
+=========================== */
+
+.hero{
+    text-align:center;
+    padding:80px 20px;
+}
+
+.hero h1{
+    font-size:56px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:22px;
+    color:#cbd5e1;
+    margin-bottom:35px;
+}
+
+.search-box input{
+    width:500px;
+    max-width:90%;
+    height:55px;
+    border:none;
+    border-radius:12px;
+    padding:0 18px;
+    font-size:18px;
+}
+
+/* ===========================
+   GALERÍA
+=========================== */
+
+.gallery{
+    padding:40px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,250px);
+    justify-content:center;
+    gap:30px;
+}
+
+/* ===========================
+   TARJETAS
+=========================== */
+
+.card{
+    width:250px;
+    background:#1f2937;
+    border-radius:18px;
+    overflow:hidden;
+    transition:transform .3s, box-shadow .3s;
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 14px 30px rgba(0,0,0,.4);
+}
+
+.card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    display:block;
+}
+
+.card-info{
+    padding:18px;
+}
+
+.card-info h3{
+    margin-bottom:8px;
+    font-size:20px;
+}
+
+.card-info p{
+    color:#cbd5e1;
+    margin-bottom:16px;
+    font-size:15px;
+}
+
+
+/* ===========================
+   BOTONES DE LA TARJETA
+=========================== */
+
+.card-actions{
+    display:flex;
+    gap:10px;
+    margin:15px 0;
+}
+
+.card-actions button{
+    width:48px;
+    height:48px;
+    border:none;
+    border-radius:12px;
+    background:#374151;
+    color:white;
+    font-size:21px;
+    cursor:pointer;
+    transition:background .2s, transform .2s;
+}
+
+.card-actions button:hover{
+    background:#3b82f6;
+    transform:scale(1.08);
+}
+
+
+/* ===========================
+   BOTÓN DESCARGAR
+=========================== */
+
+.download-btn{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    background:#3b82f6;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:background .2s, transform .2s;
+}
+
+.download-btn:hover{
+    background:#2563eb;
+    transform:translateY(-2px);
+}
+
+/* ===========================
+   VISTA PREVIA
+=========================== */
+
+.preview{
+
+    display:none;
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,.8);
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:999;
+
+}
+
+.preview-content{
+
+    position:relative;
+
+}
+
+.preview img{
+
+    max-width:80vw;
+
+    max-height:80vh;
+
+    border-radius:15px;
+
+}
+
+#closePreview{
+
+    position:absolute;
+
+    top:-40px;
+
+    right:0;
+
+    font-size:40px;
+
+    color:white;
+
+    cursor:pointer;
+
+}
+/* ===========================
+   SIN FAVORITOS
+=========================== */
+
+.no-favorites{
+    grid-column:1 / -1;
+    width:100%;
+    text-align:center;
+    padding:80px 20px;
+}
+
+.no-favorites h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.no-favorites p{
+    font-size:18px;
+    color:#cbd5e1;
+}
+/* ===========================
+   APOYAR
+=========================== */
+
+.support{
+    max-width:700px;
+    margin:20px auto 80px;
+    padding:40px;
+    text-align:center;
+    background:#1f2937;
+    border-radius:20px;
+}
+
+.support h2{
+    font-size:32px;
+    margin-bottom:20px;
+}
+
+.support p{
+    font-size:19px;
+    line-height:1.6;
+    color:#cbd5e1;
+    margin-bottom:15px;
+}
+
+.tiktok-button{
+    display:inline-block;
+    margin-top:20px;
+    padding:14px 25px;
+    background:#3b82f6;
+    color:white;
+    text-decoration:none;
+    border-radius:12px;
+    font-size:18px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.tiktok-button:hover{
+    background:#2563eb;
+    transform:translateY(-2px);
+}
+/* ===========================
+   📱 DISEÑO PARA MÓVILES
+=========================== */
+
+@media (max-width: 768px){
+
+    /* HEADER */
+
+    header{
+        flex-direction:column;
+        gap:20px;
+        padding:20px;
+    }
+
+    .logo{
+        font-size:28px;
+    }
+
+    .logo img{
+        width:48px;
+        height:48px;
+    }
+
+    nav{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
+    }
+
+    nav a{
+        font-size:16px;
+    }
+
+
+    /* HERO */
+
+    .hero{
+        padding:50px 15px;
+    }
+
+    .hero h1{
+        font-size:38px;
+        line-height:1.15;
+    }
+
+    .hero p{
+        font-size:18px;
+        line-height:1.5;
+    }
+
+
+    /* BUSCADOR */
+
+    .search-box input{
+        width:100%;
+        max-width:400px;
+        height:50px;
+        font-size:16px;
+    }
+
+
+    /* GALERÍA */
+
+    .gallery{
+        padding:20px 15px;
+    }
+
+    .cards{
+        grid-template-columns:repeat(2, 1fr);
+        gap:15px;
+    }
+
+
+    /* TARJETAS */
+
+    .card{
+        width:100%;
+    }
+
+    .card img{
+        height:auto;
+        aspect-ratio:1 / 1;
+    }
+
+    .card-info{
+        padding:14px;
+    }
+
+    .card-info h3{
+        font-size:17px;
+    }
+
+    .card-info p{
+        font-size:14px;
+    }
+
+
+    /* BOTONES */
+
+    .card-actions{
+        gap:8px;
+        margin:12px 0;
+    }
+
+    .card-actions button{
+        width:42px;
+        height:42px;
+        font-size:18px;
+    }
+
+    .download-btn{
+        font-size:14px;
+        padding:10px;
+    }
+
+
+    /* APOYAR */
+
+    .support{
+        margin:20px 15px 60px;
+        padding:30px 20px;
+    }
+
+    .support h2{
+        font-size:27px;
+    }
+
+    .support p{
+        font-size:17px;
+    }
+
+}
+/* =====================================
+   FILTROS DE TEMPORADA
+===================================== */
+
+.season-filters{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin-top:20px;
+}
+
+.filter-btn{
+    padding:10px 18px;
+    border:none;
+    border-radius:10px;
+    background:#374151;
+    color:white;
+    font-size:15px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.filter-btn:hover{
+    background:#2563eb;
+    transform:translateY(-2px);
+}
+
+.filter-btn.active{
+    background:#3b82f6;
+}
+
+
+/* =====================================
+   FILTROS EN MÓVIL
+===================================== */
+
+@media (max-width:768px){
+
+    .season-filters{
+        gap:8px;
+        margin-top:15px;
+    }
+
+    .filter-btn{
+        padding:9px 14px;
+        font-size:14px;
+    }
+
+}
