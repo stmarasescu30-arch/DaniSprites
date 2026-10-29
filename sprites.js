@@ -1290,6 +1290,24 @@ const fondos = [
 
 
 // =====================================
+// 🔢 ID AUTOMÁTICOS
+// El ID sigue la posición de cada elemento en su lista.
+// Al insertar un espíritu en medio, los números se recalculan solos.
+// Para favoritos usamos la ruta de imagen, que no cambia al reordenar.
+perfiles.forEach((sprite, indice) => {
+    sprite.idAnterior = sprite.id;
+    sprite.id = indice + 1;
+    sprite.favoritoId = sprite.imagen;
+});
+
+fondos.forEach((sprite, indice) => {
+    sprite.idAnterior = sprite.id;
+    sprite.id = indice + 1;
+    sprite.favoritoId = sprite.imagen;
+});
+
+
+// =====================================
 // 📦 TODOS LOS SPRITES
 // =====================================
 
@@ -1297,3 +1315,23 @@ const sprites = [
     ...perfiles,
     ...fondos
 ];
+
+
+/**
+ * Lee favoritos por ruta de imagen.
+ * Convierte también los favoritos antiguos (IDs numéricos) a rutas.
+ */
+function leerFavoritos() {
+    const guardados = JSON.parse(localStorage.getItem("favoritos")) || [];
+    const claves = guardados.map(valor => {
+        if (typeof valor === "string" && valor.includes("/")) return valor;
+
+        const anterior = Number(valor);
+        const coincidencia = sprites.find(sprite => sprite.idAnterior === anterior);
+        return coincidencia ? coincidencia.favoritoId : null;
+    }).filter(Boolean);
+
+    const unicos = [...new Set(claves)];
+    localStorage.setItem("favoritos", JSON.stringify(unicos));
+    return unicos;
+}
