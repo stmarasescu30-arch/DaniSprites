@@ -57,7 +57,7 @@ function crearGaleria(lista = fondosMostrar) {
 
                         <button
                             class="fav-btn"
-                            data-id="${sprite.id}">
+                            data-id="${sprite.favoritoId}">
                             🤍
                         </button>
 
@@ -91,14 +91,11 @@ function crearGaleria(lista = fondosMostrar) {
 
 function iniciarFavoritos() {
 
-    let favoritos =
-        JSON.parse(localStorage.getItem("favoritos")) || [];
-
-    favoritos = favoritos.map(id => Number(id));
+    let favoritos = leerFavoritos();
 
     document.querySelectorAll(".fav-btn").forEach(boton => {
 
-        const id = Number(boton.dataset.id);
+        const id = boton.dataset.id;
 
         if (favoritos.includes(id)) {
             boton.textContent = "❤️";
