@@ -4,14 +4,8 @@
 
 const gallery = document.getElementById("gallery");
 
-// Leer favoritos
-let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
-
-// Convertir los IDs a números
-favoritos = favoritos.map(id => Number(id));
-
-// Guardar favoritos normalizados
-localStorage.setItem("favoritos", JSON.stringify(favoritos));
+// Leer favoritos usando una clave estable por imagen
+let favoritos = leerFavoritos();
 
 
 // =====================================
@@ -24,7 +18,7 @@ function crearGaleria() {
 
     // Buscar los espíritus favoritos
     const favoritosSprites = sprites.filter(sprite =>
-        favoritos.includes(Number(sprite.id))
+        favoritos.includes(sprite.favoritoId)
     );
 
 
@@ -66,7 +60,7 @@ function crearGaleria() {
 
                         <button
                             class="fav-btn"
-                            data-id="${sprite.id}">
+                            data-id="${sprite.favoritoId}">
                             ❤️
                         </button>
 
@@ -105,7 +99,7 @@ function iniciarFavoritos() {
 
         boton.addEventListener("click", () => {
 
-            const id = Number(boton.dataset.id);
+            const id = boton.dataset.id;
 
             favoritos = favoritos.filter(f => f !== id);
 
