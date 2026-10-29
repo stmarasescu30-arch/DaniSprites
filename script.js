@@ -28,7 +28,7 @@ function crearGaleria(lista = sprites) {
 
                 <div class="card-actions">
 
-                    <button class="fav-btn" data-id="${sprite.id}">
+                    <button class="fav-btn" data-id="${sprite.favoritoId}">
                         🤍
                     </button>
 
@@ -59,14 +59,11 @@ function crearGaleria(lista = sprites) {
 
 function iniciarFavoritos(){
 
-    let favoritos =
-        JSON.parse(localStorage.getItem("favoritos")) || [];
-
-    favoritos = favoritos.map(id => Number(id));
+    let favoritos = leerFavoritos();
 
     document.querySelectorAll(".fav-btn").forEach(boton => {
 
-        const id = Number(boton.dataset.id);
+        const id = boton.dataset.id;
 
         if(favoritos.includes(id)){
             boton.textContent = "❤️";
@@ -74,10 +71,7 @@ function iniciarFavoritos(){
 
         boton.addEventListener("click", () => {
 
-            favoritos =
-                JSON.parse(localStorage.getItem("favoritos")) || [];
-
-            favoritos = favoritos.map(id => Number(id));
+            favoritos = leerFavoritos();
 
             if(favoritos.includes(id)){
 
